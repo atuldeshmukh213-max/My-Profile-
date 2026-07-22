@@ -1,1 +1,234 @@
+/* ===============================
+   ATUL DESHMUKH BACHCHAN PORTFOLIO
+   Colorful Premium CSS
+==================================*/
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+/* Scroll */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(45deg,#ff512f,#dd2476,#6a11cb,#2575fc);
+    background-size:400% 400%;
+    animation:bgmove 10s infinite;
+}
+
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:6px solid white;
+    object-fit:cover;
+    box-shadow:0 0 30px cyan;
+    transition:.5s;
+}
+
+.profile:hover{
+    transform:scale(1.1) rotate(5deg);
+}
+
+.hero h1{
+    margin-top:20px;
+    font-size:45px;
+    color:#fff;
+}
+
+.hero h3{
+    margin-top:10px;
+    color:yellow;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+/* Sections */
+
+section{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(8px);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#00ffff;
+    font-size:35px;
+}
+
+/* About */
+
+.about p{
+    text-align:center;
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* Family */
+
+.family{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.member{
+    text-align:center;
+    padding:20px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#ff6a00,#ee0979);
+    transition:.5s;
+}
+
+.member:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 25px gold;
+}
+
+.member img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    margin-bottom:15px;
+}
+
+.member h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+.member p{
+    color:#fff;
+    line-height:1.7;
+}
+
+/* Education */
+
+.education ul{
+    list-style:none;
+    text-align:center;
+}
+
+.education li{
+    font-size:22px;
+    padding:15px;
+    background:#00b894;
+    margin:15px;
+    border-radius:12px;
+}
+
+/* Skills */
+
+.skills{
+    text-align:center;
+}
+
+.skill{
+    display:inline-block;
+    padding:15px 30px;
+    margin:12px;
+    border-radius:50px;
+    background:linear-gradient(45deg,#00dbde,#fc00ff);
+    font-weight:bold;
+    transition:.4s;
+}
+
+.skill:hover{
+    transform:scale(1.15);
+    box-shadow:0 0 20px cyan;
+}
+
+/* Contact */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    font-size:24px;
+    background:linear-gradient(45deg,#ff512f,#f09819);
+    display:inline-block;
+    padding:18px 35px;
+    border-radius:50px;
+}
+
+.contact i{
+    color:#25D366;
+    font-size:28px;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    text-align:center;
+    padding:30px;
+    background:#111;
+    color:white;
+    font-size:18px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:32px;
+}
+
+.hero h3{
+    font-size:20px;
+}
+
+.profile{
+    width:150px;
+    height:150px;
+}
+
+section h2{
+    font-size:28px;
+}
+
+.member img{
+    width:120px;
+    height:120px;
+}
+
+.contact p{
+    font-size:18px;
+}
+
+  }
