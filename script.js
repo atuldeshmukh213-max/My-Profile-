@@ -1,72 +1,170 @@
 // ===============================
-// ATUL DESHMUKH BACHCHAN PORTFOLIO
+// Atul Deshmukh Bachchan Portfolio
 // script.js
 // ===============================
 
 // Welcome Message
-window.onload = function () {
-    alert("🙏 Welcome to Atul Deshmukh Bachchan's Portfolio");
-};
-
-// Smooth Fade Animation
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-});
-
-sections.forEach((section) => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(50px)";
-    section.style.transition = "all 1s ease";
-    observer.observe(section);
+window.addEventListener("load", () => {
+    console.log("Welcome to Atul Deshmukh Bachchan Portfolio");
 });
 
 // Typing Effect
-const text = "BCA Student | Frontend Web Developer | GitHub Learner";
-const typing = document.querySelector(".hero h3");
+const typingText = [
+    "BCA Student",
+    "Frontend Web Developer",
+    "HTML | CSS | JavaScript",
+    "Git & GitHub Learner"
+];
 
-let i = 0;
+let textIndex = 0;
+let charIndex = 0;
 
-typing.innerHTML = "";
+const heading = document.querySelector(".hero h2");
 
-function typeWriter() {
-    if (i < text.length) {
-        typing.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 80);
+function typeEffect() {
+
+    if (!heading) return;
+
+    if (charIndex < typingText[textIndex].length) {
+
+        heading.innerHTML += typingText[textIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeEffect,100);
+
+    } else {
+
+        setTimeout(eraseEffect,1500);
+
     }
+
 }
 
-typeWriter();
+function eraseEffect(){
 
-// Profile Image Animation
-const profile = document.querySelector(".profile");
+    if(charIndex>0){
 
-profile.addEventListener("mouseover", () => {
-    profile.style.transform = "scale(1.1) rotate(10deg)";
+        heading.innerHTML=typingText[textIndex].substring(0,charIndex-1);
+
+        charIndex--;
+
+        setTimeout(eraseEffect,50);
+
+    }else{
+
+        textIndex++;
+
+        if(textIndex>=typingText.length){
+
+            textIndex=0;
+
+        }
+
+        setTimeout(typeEffect,300);
+
+    }
+
+}
+
+heading.innerHTML="";
+typeEffect();
+
+
+// Scroll Animation
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
 });
 
-profile.addEventListener("mouseout", () => {
-    profile.style.transform = "scale(1) rotate(0deg)";
 });
 
-// Skill Hover Sound (Optional)
-const skills = document.querySelectorAll(".skill");
+document.querySelectorAll("section").forEach((el)=>{
 
-skills.forEach((skill) => {
-    skill.addEventListener("mouseenter", () => {
-        skill.style.background = "linear-gradient(45deg,#00ff99,#00ccff)";
-    });
+observer.observe(el);
 
-    skill.addEventListener("mouseleave", () => {
-        skill.style.background = "";
-    });
 });
 
-// Live
+
+// Profile Hover Animation
+
+const profile=document.querySelector(".profile");
+
+if(profile){
+
+profile.addEventListener("mouseover",()=>{
+
+profile.style.transform="scale(1.08) rotate(5deg)";
+
+});
+
+profile.addEventListener("mouseout",()=>{
+
+profile.style.transform="scale(1)";
+
+});
+
+}
+
+
+// Skill Click Effect
+
+const skills=document.querySelectorAll(".skill");
+
+skills.forEach(skill=>{
+
+skill.addEventListener("click",()=>{
+
+alert("Skill : "+skill.innerText);
+
+});
+
+});
+
+
+// Live Time
+
+const footer=document.querySelector("footer");
+
+const clock=document.createElement("p");
+
+footer.appendChild(clock);
+
+setInterval(()=>{
+
+const now=new Date();
+
+clock.innerHTML="🕒 "+now.toLocaleTimeString();
+
+},1000);
+
+
+// Smooth Button
+
+const btn=document.querySelector(".btn");
+
+if(btn){
+
+btn.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+document.querySelector("#about").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+}
+
+console.log("Portfolio Loaded Successfully");
