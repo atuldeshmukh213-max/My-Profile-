@@ -1,7 +1,9 @@
-/* ===========================
-   Atul Deshmukh Bachchan
-   Portfolio CSS - Part 1
-=========================== */
+/*=============================
+   PREMIUM PORTFOLIO CSS
+   Part 1
+==============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 *{
 margin:0;
@@ -12,19 +14,20 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(-45deg,#1a2a6c,#b21f1f,#fdbb2d,#00c9ff);
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#6d28d9,#0f766e);
 background-size:400% 400%;
-animation:bg 15s ease infinite;
+animation:bgMove 15s infinite ease;
 color:#fff;
+overflow-x:hidden;
 }
 
-@keyframes bg{
+@keyframes bgMove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
 }
 
-/* HERO */
+/* Hero */
 
 .hero{
 min-height:100vh;
@@ -36,45 +39,48 @@ padding:40px;
 }
 
 .hero-content{
-max-width:800px;
+max-width:900px;
 }
 
 .profile{
-width:220px;
-height:220px;
+width:270px;
+height:270px;
 border-radius:50%;
-border:8px solid white;
 object-fit:cover;
-box-shadow:0 0 30px cyan;
+border:8px solid #fff;
+box-shadow:0 0 35px #00e5ff;
 transition:.5s;
 }
 
 .profile:hover{
-transform:scale(1.08) rotate(5deg);
-box-shadow:0 0 50px gold;
+transform:scale(1.08) rotate(3deg);
+box-shadow:0 0 50px #22c55e;
 }
 
 .hero h1{
-font-size:50px;
+font-size:58px;
 margin-top:20px;
+color:#fff;
+text-shadow:0 0 20px cyan;
 }
 
 .hero h2{
-color:#ffe600;
 margin:15px 0;
+font-size:30px;
+color:#facc15;
 }
 
 .hero p{
 font-size:20px;
 line-height:1.8;
+margin-bottom:30px;
 }
 
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:#ff0080;
-color:white;
+padding:15px 40px;
+background:linear-gradient(45deg,#06b6d4,#3b82f6);
+color:#fff;
 text-decoration:none;
 border-radius:50px;
 font-weight:bold;
@@ -82,34 +88,39 @@ transition:.4s;
 }
 
 .btn:hover{
-background:#00e5ff;
-transform:scale(1.1);
+background:linear-gradient(45deg,#22c55e,#f97316);
+transform:scale(1.08);
 }
 
-/* SECTION */
+/* Sections */
 
 section{
 padding:80px 10%;
 }
 
 section h2{
+font-size:42px;
 text-align:center;
-font-size:40px;
 margin-bottom:40px;
-color:#fff;
+color:#f8fafc;
+text-shadow:0 0 10px #38bdf8;
 }
 
-/* ABOUT */
+/* About */
 
 .about p{
 max-width:900px;
 margin:auto;
+text-align:center;
 font-size:20px;
 line-height:2;
-text-align:center;
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(12px);
 }
 
-/* FAMILY TREE */
+/* Family Tree */
 
 .family-tree{
 display:flex;
@@ -129,41 +140,41 @@ margin:30px 0;
 .tree-line{
 width:6px;
 height:70px;
-background:#00ffff;
+background:#38bdf8;
 border-radius:20px;
-box-shadow:0 0 20px cyan;
+box-shadow:0 0 20px #38bdf8;
 }
 
 .person{
-width:280px;
+width:320px;
 padding:25px;
 border-radius:25px;
 background:rgba(255,255,255,.12);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(15px);
 text-align:center;
-transition:.4s;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+box-shadow:0 15px 30px rgba(0,0,0,.4);
+transition:.5s;
 }
 
 .person:hover{
 transform:translateY(-12px);
-box-shadow:0 0 30px gold;
+box-shadow:0 0 35px #facc15;
 }
 
 .person img{
-width:370px;
-height:270px;
-border-radius:70%;
+width:220px;
+height:220px;
+border-radius:50%;
 object-fit:cover;
-border:6px solid white;
-box-shadow:0 0 25px cyan;
+border:6px solid #fff;
+box-shadow:0 0 30px #00e5ff;
 margin-bottom:15px;
 }
 
 .person h3{
-margin:10px 0;
+color:#facc15;
+margin-bottom:10px;
 font-size:24px;
-color:#ffe600;
 }
 
 .person p{
@@ -172,33 +183,33 @@ font-size:17px;
 }
 
 .grandfather{
-background:linear-gradient(135deg,#0099ff,#6a11cb);
-}
-/* ===========================
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+   }
+/*=============================
    EDUCATION
-=========================== */
+==============================*/
 
 .education .card{
-max-width:800px;
+max-width:900px;
 margin:auto;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:20px;
+padding:35px;
+border-radius:25px;
+background:rgba(255,255,255,.10);
+backdrop-filter:blur(15px);
+box-shadow:0 15px 30px rgba(0,0,0,.4);
+transition:.5s;
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-transition:.4s;
 }
 
 .education .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 30px #00ffff;
+box-shadow:0 0 35px #22d3ee;
 }
 
 .education h3{
-font-size:28px;
+font-size:30px;
+color:#facc15;
 margin-bottom:15px;
-color:#ffe600;
 }
 
 .education p{
@@ -206,9 +217,9 @@ font-size:18px;
 line-height:1.8;
 }
 
-/* ===========================
+/*=============================
    SKILLS
-=========================== */
+==============================*/
 
 .skill-box{
 display:flex;
@@ -218,34 +229,39 @@ gap:20px;
 }
 
 .skill{
-padding:15px 30px;
-background:linear-gradient(45deg,#ff512f,#dd2476);
-border-radius:50px;
+padding:16px 35px;
 font-size:18px;
-font-weight:bold;
+font-weight:600;
+border-radius:50px;
+background:linear-gradient(45deg,#22c55e,#14b8a6);
+color:#fff;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
 transition:.4s;
 cursor:pointer;
-box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.skill:nth-child(even){
+background:linear-gradient(45deg,#3b82f6,#8b5cf6);
 }
 
 .skill:hover{
 transform:scale(1.1);
-background:linear-gradient(45deg,#00dbde,#fc00ff);
+box-shadow:0 0 25px #facc15;
 }
 
-/* ===========================
+/*=============================
    CONTACT
-=========================== */
+==============================*/
 
 .contact-box{
-max-width:700px;
+max-width:800px;
 margin:auto;
-padding:30px;
-background:rgba(255,255,255,.12);
-border-radius:20px;
-backdrop-filter:blur(10px);
+padding:35px;
+border-radius:25px;
+background:rgba(255,255,255,.10);
+backdrop-filter:blur(15px);
 text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
+box-shadow:0 15px 30px rgba(0,0,0,.4);
 }
 
 .contact-box p{
@@ -254,63 +270,57 @@ margin:20px 0;
 }
 
 .contact-box i{
+font-size:28px;
+color:#25D366;
 margin-right:10px;
-color:#00ffcc;
-font-size:26px;
 }
 
-/* ===========================
+/*=============================
    FOOTER
-=========================== */
+==============================*/
 
 footer{
 margin-top:50px;
-padding:40px 20px;
+padding:40px;
 text-align:center;
-background:#111;
+background:#020617;
+border-top:2px solid #38bdf8;
 }
 
 footer h2{
-color:#ffe600;
+color:#facc15;
 margin-bottom:15px;
 }
 
 footer p{
+color:#cbd5e1;
 font-size:18px;
-margin:10px 0;
-color:#ddd;
+margin:8px 0;
 }
 
-/* ===========================
-   ANIMATION
-=========================== */
+/*=============================
+   SCROLL ANIMATION
+==============================*/
 
-.person,
-.card,
-.contact-box,
-.skill{
-animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-0%{
+section{
 opacity:0;
-transform:translateY(40px);
+transform:translateY(60px);
+transition:1s;
 }
-100%{
+
+section.show{
 opacity:1;
 transform:translateY(0);
 }
-}
 
-/* ===========================
+/*=============================
    MOBILE RESPONSIVE
-=========================== */
+==============================*/
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:34px;
+font-size:36px;
 }
 
 .hero h2{
@@ -322,8 +332,17 @@ font-size:16px;
 }
 
 .profile{
-width:160px;
-height:160px;
+width:200px;
+height:200px;
+}
+
+.person{
+width:100%;
+}
+
+.person img{
+width:180px;
+height:180px;
 }
 
 .parents,
@@ -333,39 +352,17 @@ align-items:center;
 gap:25px;
 }
 
-.person{
-width:95%;
-}
-
-section{
-padding:50px 20px;
-}
-
-section h2{
-font-size:30px;
+.skill{
+width:100%;
+text-align:center;
 }
 
 .contact-box p{
 font-size:18px;
 }
 
-.skill{
-font-size:16px;
-padding:12px 20px;
-}
-
-footer h2{
-font-size:24px;
-}
-
-}
 section{
-opacity:0;
-transform:translateY(60px);
-transition:1s;
+padding:60px 20px;
 }
 
-section.show{
-opacity:1;
-transform:translateY(0);
-}
+   }
